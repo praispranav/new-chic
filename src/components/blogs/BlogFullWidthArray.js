@@ -1,16 +1,25 @@
 import React,{useContext} from 'react';
-// import { UserContext } from "../../App"
+import {motion} from "framer-motion"
 
 const BlogFullWidthArray = (props) => {
     return (
         <>
-        <div keys={props.keys} 
+        <motion.div 
+            initial={{ scale: 0 }}
+            animate={{ rotate: 360, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20
+            }}
+            keys={props.keys} 
              className="array">
             {props.name}<br/><br />
             {props.english}
-        </div>
+        </motion.div>
         </>
     );
 }
+
 
 export default React.memo(BlogFullWidthArray);

@@ -1,27 +1,30 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import CheckIcon from "@material-ui/icons/Check"
-
+import Typography from "@material-ui/core/Typography"
+import { UserContext } from '../../App'
 
 export default function BlogFullWidthList(props) {
-    const modelData = props.modelData
+    const item = props.item
     return (
         <>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />English : {modelData.english}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Korean : {modelData.korean}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Japanese : {modelData.japanese}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Vietnamese : {modelData.vietnamese}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />PhySical Location : {modelData.physicalLocation}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Five Elements : {modelData.fiveElement}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Horary Cycle {modelData.horarycycle}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Functionality : {modelData.functionality}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Name : {modelData.name}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />PinyIn : {modelData.pinyin}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Meridian : {modelData.meridian}</li><br/>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Element : {modelData.element}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Indication : {modelData.indication}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Caution : {modelData.caution} </li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Notes : {modelData.notes}</li>
-                        <li className="myliststyle"><CheckIcon style={{color:"red", marginRight:"20px"}} />Video Link : {modelData.videoLink}</li>   
+        <ul>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />English : {item.english}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Korean : {item.korean}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Japanese : {item.japanese}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Vietnamese : {item.vietnamese}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />PhySical Location : {item.physicalLocation}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Five Elements : {item.fiveElement}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Horary Cycle : {item.horarycycle}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Functionality : {item.functionality}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Name : {item.name}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />PinyIn : {item.pinyin}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Meridian : {item.meridian}</li><br/>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Element : {item.element}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Indication : {item.indication}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Caution : {item.caution} </li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Notes : {item.notes}</li>
+            <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Video Link : {item.videoLink}</li>
+        </ul>   
         </>
     )
 }

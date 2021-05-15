@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useReducer } from 'react';
-import { useLocation, Switch } from 'react-router-dom';
+import { useLocation, Switch, useParams } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
+import AOS from "aos"
 
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
@@ -41,7 +42,7 @@ import BlogFullWidth from "./pages/blogs/BlogFullWidth";
 // import BlogGrid from "./pages/blogs/BlogGrid";
 // import BlogLeftSidebar from "./pages/blogs/BlogLeftSidebar";
 // import BlogRightSidebar from "./pages/blogs/BlogRightSidebar";
-// import BlogDetail from "./pages/blogs/BlogDetail";
+import BlogDetail from "./pages/blogs/BlogDetail";
 // import Login from "./pages/Login";
 // import SignUp from "./pages/SignUp";
 // import Error from "./pages/Error";
@@ -51,7 +52,9 @@ import "./assets/css/customcss.css"
 export const UserContext = React.createContext();
 const initialState = {
  activeFilter: 'all',
- meridian: []
+ meridian: [],
+  activeNav:"Profile",
+  point: {}
 }
 
 const reducer = (state, action)=>{
@@ -60,6 +63,10 @@ const reducer = (state, action)=>{
       return { ...state, activeFilter : action.value}
     case 'meridian':
       return { ...state, meridian: action.value}
+    case 'activenav':
+      return{ ...state, activeNav: action.value}
+    case 'point':
+      return { ...state, point: action.value }
   }
 }
 
@@ -109,11 +116,12 @@ const App = () => {
               <AppRoute path="/faq" component={Faq} />
               <AppRoute path="/contact" component={Contact} />
               <AppRoute path="/recover" component={RecoverPassword} /> */}
-              <AppRoute path="/blog-full-width" component={BlogFullWidth} />
+              <AppRoute path="/acupuncture/:name" component={(event)=> <BlogDetail name={event.match.params.name} />} />
+              <AppRoute path="/acupuncture" component={BlogFullWidth} />
+
               {/* <AppRoute path="/blog-grid" component={BlogGrid} />
               <AppRoute path="/blog-left-sidebar" component={BlogLeftSidebar} />
               <AppRoute path="/blog-right-sidebar" component={BlogRightSidebar} />
-              <AppRoute path="/blog-single" component={BlogDetail} />
               <AppRoute path="/login" component={Login} />
               <AppRoute path="/sign-up" component={SignUp} /> */}
               <AppRoute path="/forums" component={Forums} />

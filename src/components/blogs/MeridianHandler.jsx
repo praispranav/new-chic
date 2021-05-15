@@ -7,16 +7,18 @@ const MeridianList = (props) =>{
     return(
         <div className="mysideFilter">
             <div onClick={()=> props.handleClick(props.meridian)}>
-                <Typography variant="h6">{props.meridian}</Typography></div>
+                <Typography variant="h6" style={{fontSize:"15px"}} onClick={()=> props.handleClick(props.meridian)}>{props.meridian}</Typography></div>
 
         </div>
     )
 }
 
 const Red = () =>{
+    const context = useContext(UserContext)
     return(
         <div style={{}} className="sidefilter">
-            <Typography variant="h6"><small>Filter</small></Typography>
+            <Typography variant="body1"><small>{context.state.activeFilter.length > 3? 
+                context.state.activeFilter : "Hand Yin Lung Meridian (LU) (手太阴肺经穴, 手太陰肺經)" }</small></Typography>
         </div>
     )
 }
@@ -34,10 +36,19 @@ function MeridianHandler(props) {
     
     return (
    <>
-    <div style={ isOpen ? {display:"none"}: {display:"block"}} onClick={()=> setisOpen(true)}>
+    <div onMouseEnter={()=> setisOpen(true)} style={ isOpen ? {display:"none"}: {display:"block"}} onClick={()=> setisOpen(true)}>
         <Red />
     </div>
-    <div style={ isOpen ? {display:"block", background:"white", overflowY:"auto", height:"50vh", boxShadow:"0px 0px 10px rgb(230,230,230)"}: {display:"none"}}>
+    <div style={ isOpen ? {
+            display:"block", 
+            background:"white", 
+            overflowY:"auto", 
+            height:"50vh", 
+            boxShadow:"0px 0px 10px rgb(230,230,230)"}
+
+        :{display:"none"}}
+        onMouseLeave={()=> setisOpen(false)}>
+            
         <div style={{textAlign:"right", paddingRight:"1em", paddingTop:"10px"}} onClick={()=> setisOpen(false)}>
             <CloseIcon fontSize="large" />
         </div>

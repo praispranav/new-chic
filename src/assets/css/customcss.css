@@ -1,6 +1,7 @@
 .array {
   margin: 1em;
   width: 8em;
+  color: grey;
   padding: 1em;
   -webkit-box-shadow: 0px 0px 15px #e6e6e6;
           box-shadow: 0px 0px 15px #e6e6e6;
@@ -11,8 +12,9 @@
           box-shadow: 0 0px 20px #e6e6e6;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  -webkit-transition: 1s;
-  transition: 1s;
+  color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .array-parent {
@@ -58,12 +60,46 @@
   overflow: auto;
 }
 
+.custom-scroll::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+.mycustomnav {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  width: 100%;
+  white-space: nowrap;
+  padding-top: 0.5em;
+  background: white;
+}
+
+.mycustomnavactive {
+  border-radius: 30px;
+  border: 1px solid #979696;
+  padding: 0.7em;
+  -webkit-box-shadow: 0px 0px 15px #e6e6e6;
+          box-shadow: 0px 0px 15px #e6e6e6;
+}
+
+.mycustomnavactive:hover {
+  background: #f7004a;
+  -webkit-transition: 1s;
+  transition: 1s;
+  color: white;
+}
+
+.custom-model-box::-webkit-scrollbar {
+  overflow: hidden;
+}
+
 .sidefilter {
+  background: white;
   color: black;
-  border-radius: 50%;
-  padding: 13px;
-  -webkit-box-shadow: 0px 0px 10px #eeebeb;
-          box-shadow: 0px 0px 10px #eeebeb;
+  border-radius: 10px;
+  padding: 7px;
+  font-size: 10px;
+  -webkit-box-shadow: 0px 0px 10px gainsboro;
+          box-shadow: 0px 0px 10px gainsboro;
 }
 
 .mysideFilter {
@@ -73,7 +109,65 @@
   background: white;
 }
 
+.mycustomliststyle {
+  color: white;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1485ff), to(#22629d));
+  background: linear-gradient(#1485ff, #22629d);
+  padding: 3px;
+  margin-right: 20px;
+}
+
+.mycustomtopicinactive {
+  background: rgba(248, 248, 248, 0.9);
+  padding: 0.5em;
+}
+
+.mycustomtopicactive {
+  background: -webkit-gradient(linear, left bottom, left top, from(red), color-stop(#eb9595), to(white));
+  background: linear-gradient(to top, red, #eb9595, white);
+  padding: 2px;
+  border-bottom: 2px solid linear-gradient(red, white, #e6e6e6);
+}
+
+.mytopicmobile {
+  margin-left: -10px;
+}
+
+.mytopic1 {
+  text-align: center;
+  background: white;
+  width: 104%;
+}
+
+.mycustominput {
+  margin-top: 1em;
+  padding: 0.3em;
+  width: 100%;
+  border: 1px solid white;
+}
+
 @media screen and (max-width: 500px) {
+  .mycustominput {
+    margin-left: 0px;
+  }
+  .mymobile {
+    margin-top: 4em;
+  }
+  .mycustomtopicinactive {
+    background: rgba(248, 248, 248, 0.9);
+    padding: 0.5em;
+  }
+  .mytopicmobile {
+    margin-left: -1.8vw;
+    height: auto;
+  }
+  .mycustomtopicactive {
+    background: -webkit-gradient(linear, left bottom, left top, from(red), to(white));
+    background: linear-gradient(to top, red, white);
+    padding: 0px;
+    border-bottom: 2px solid linear-gradient(red, white, #e6e6e6);
+  }
   .custom-model {
     position: fixed;
     top: -15vh;
@@ -97,23 +191,35 @@
 }
 
 .mycustomlist li {
-  background-color: #ebebeb;
+  background: -webkit-gradient(linear, left top, right bottom, from(#ebebeb), color-stop(#c8c8c8), to(white));
+  background: linear-gradient(to right bottom, #ebebeb, #c8c8c8, white);
   padding: 8px;
   padding-right: 15px;
   padding-left: 15px;
   color: black;
   border-radius: 50%;
+  -webkit-box-shadow: 2px 2px 4px #d2d2d2;
+          box-shadow: 2px 2px 4px #d2d2d2;
 }
 
 .mycustomlist li:hover {
   color: white;
   background-color: red;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.mybuttonstyle {
+  border-top: 1px solid black;
+  background: black;
+  margin-left: -20px;
+  color: white;
+  border-radius: 0;
+  padding: 0.6em;
 }
 
 .listactive {
-  background: red;
+  background: radial-gradient(#f2b0b0, #9198e5);
   color: white;
 }
 
@@ -131,6 +237,60 @@
           animation-duration: 5s;
   -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
           animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.headerborder {
+  width: 4em;
+  background: red;
+  height: 4px;
+  border-radius: 5px;
+  -webkit-animation-name: bor;
+          animation-name: bor;
+  margin-top: 1em;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.mynewsletter {
+  padding: 2em;
+  background: -webkit-gradient(linear, left top, right bottom, from(#82bcf2), color-stop(#469ff2), to(#0084ff));
+  background: linear-gradient(to bottom right, #82bcf2, #469ff2, #0084ff);
+  -webkit-box-shadow: 4px 4px 10px #d2d2d2;
+          box-shadow: 4px 4px 10px #d2d2d2;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+@-webkit-keyframes bor {
+  0% {
+    width: 0em;
+  }
+  40% {
+    width: 15em;
+  }
+  80% {
+    width: 0em;
+  }
+  100% {
+    width: 4em;
+  }
+}
+
+@keyframes bor {
+  0% {
+    width: 0em;
+  }
+  40% {
+    width: 15em;
+  }
+  80% {
+    width: 0em;
+  }
+  100% {
+    width: 4em;
+  }
 }
 
 @-webkit-keyframes loadinganimation {
