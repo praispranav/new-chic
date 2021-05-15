@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import classNames from "classnames";
 import { FiRefreshCw, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import GeneralHeader from "../components/common/GeneralHeader";
+import Button from "../components/common/Button";
 import Breadcrumb from "../components/common/Breadcrumb";
+import ForumsCategories from "../components/other/categories/ForumsCategories";
 import breadcrumbimg from "../assets/images/bread-bg.jpg";
+import { TiArrowUnsorted, TiBrush } from "react-icons/ti";
+import img1 from "../assets/images/img1.jpg"; // 263*175
 import gitlogo from "../assets/images/git-logo.png";
 
 import Select from "react-select";
@@ -12,18 +15,77 @@ const state = {
   breadcrumbimg: breadcrumbimg,
 };
 
-const topics = [
-  "Official Management District",
-  "Japanese Architecture",
-  "Ear-acupuncture",
-  "Cupping",
-  "Scalp Acupuncture",
-  "Reflexology",
-  "Tuina",
-  "Reiki",
-  "Tibetan Medicine",
-  "Pathology",
-  "Technical Issues",
+const catitems = [
+  {
+    icon: <TiBrush />,
+    title: "Management District",
+    stitle: "12 Listings",
+    url: "#",
+    img: img1,
+  },
+  {
+    icon: <TiBrush />,
+    title: "Japanese Architecture",
+    stitle: "22 Listings",
+    url: "#",
+    img: img1,
+  },
+  {
+    icon: <TiBrush />,
+    title: "Ear-acupuncture",
+    stitle: "12 Listings",
+    url: "#",
+    img: img1,
+  },
+  {
+    icon: <TiBrush />,
+    title: "Cupping",
+    stitle: "22 Listings",
+    url: "#",
+    img: img1,
+  },
+  {
+    icon: <TiArrowUnsorted />,
+    title: "Scalp Acupuncture",
+    stitle: "33 Listings",
+    url: "#",
+    img: img1,
+  },
+  {
+    icon: <TiBrush />,
+    title: "Reflexology",
+    stitle: "44 Listings",
+    url: "#",
+    img: img1,
+  },
+  {
+    icon: <TiBrush />,
+    title: "Tuina",
+    stitle: "48 Listings",
+    url: "#",
+    img: img1,
+  },
+  {
+    icon: <TiArrowUnsorted />,
+    title: "Reiki",
+    stitle: "50 Listings",
+    url: "#",
+    img: img1,
+  },
+  {
+    icon: <TiArrowUnsorted />,
+    title: "Pathology",
+    stitle: "14 Listings",
+    url: "#",
+    img: img1,
+  },
+  {
+    icon: <TiArrowUnsorted />,
+    title: "Technical Issues",
+    stitle: "20 Listings",
+    url: "#",
+    img: img1,
+  },
 ];
 
 const viewOptions = [
@@ -54,7 +116,7 @@ function About() {
       {/* Header */}
       <GeneralHeader />
       <Breadcrumb CurrentPgTitle="Forums" img={state.breadcrumbimg} />
-      <div className="container">
+      <div className="container mb-5">
         <div className="d-flex flex-column align-items-center">
           <h3 className="widget-title pb-0" style={{ color: "#f40400" }}>
             Our Forums
@@ -62,22 +124,27 @@ function About() {
           <div className="title-shape margin-top-10px"></div>
           <h6 className="mt-5">Feel free to start a new topic </h6>
         </div>
-        <div className="d-flex justify-content-center flex-wrap mt-5">
-          {" "}
-          {topics.map((topic, index) => (
-            <button
-              key={index}
-              type="button"
-              className={classNames({
-                "topics-button": true,
-                "topics-button-selected": topic === selectedTopic,
-              })}
-              onClick={handleTopicClick}
-              name={topic}
-            >
-              {topic}
-            </button>
-          ))}
+        {
+          //   <div className="d-flex justify-content-center flex-wrap mt-5">
+          //   {" "}
+          //   {topics.map((topic, index) => (
+          //     <button
+          //       key={index}
+          //       type="button"
+          //       className={classNames({
+          //         "topics-button": true,
+          //         "topics-button-selected": topic === selectedTopic,
+          //       })}
+          //       onClick={handleTopicClick}
+          //       name={topic}
+          //     >
+          //       {topic}
+          //     </button>
+          //   ))}
+          // </div>
+        }
+        <div className="row d-flex justify-content-center mt-5">
+          <ForumsCategories catitems={catitems} />
         </div>
         <div class="table-responsive">
           <table className="table title-table">
@@ -98,6 +165,7 @@ function About() {
                 <th colSpan="6">
                   <div className="d-flex justify-content-between">
                     <div className="d-flex">
+                      <Button text="Create topic" url="/post-compose" className="mr-2"/>
                       <Select
                         className="view-selector"
                         placeholder="View all"
