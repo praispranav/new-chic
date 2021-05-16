@@ -127,7 +127,7 @@ const sectiondata = {
             ]
         },
         {
-            title: 'categories',
+            title: 'About Us',
             path: '/all-categories',
             dropdown: [
                 {
@@ -145,7 +145,7 @@ const sectiondata = {
             ]
         },
         {
-            title: 'listings',
+            title: 'Subscriptions',
             path: '/listing-grid',
             dropdown: [
                 {
@@ -183,7 +183,7 @@ const sectiondata = {
             ]
         },
         {
-            title: 'pages',
+            title: 'Acupuncture',
             path: '/user-profile',
             dropdown: [
                 {
@@ -237,7 +237,7 @@ const sectiondata = {
             ]
         },
         {
-            title: 'blog',
+            title: 'Formulas',
             path: '/blog-full-width',
             dropdown: [
                 {
@@ -262,6 +262,59 @@ const sectiondata = {
                 }
             ]
         },
+		        {
+            title: 'Materia Medica',
+            path: '/blog-full-width',
+            dropdown: [
+                {
+                    title: 'full width',
+                    path: '/blog-full-width'
+                },
+                {
+                    title: 'blog grid',
+                    path: '/blog-grid'
+                },
+                {
+                    title: 'left sidebar',
+                    path: '/blog-left-sidebar'
+                },
+                {
+                    title: 'right sidebar',
+                    path: '/blog-right-sidebar'
+                },
+                {
+                    title: 'blog detail',
+                    path: '/blog-single'
+                }
+            ]
+        },
+        {
+            title: 'Forums',
+            path: '/blog-full-width',
+            dropdown: [
+                {
+                    title: 'full width',
+                    path: '/blog-full-width'
+                },
+                {
+                    title: 'blog grid',
+                    path: '/blog-grid'
+                },
+                {
+                    title: 'left sidebar',
+                    path: '/blog-left-sidebar'
+                },
+                {
+                    title: 'right sidebar',
+                    path: '/blog-right-sidebar'
+                },
+                {
+                    title: 'blog detail',
+                    path: '/blog-single'
+                }
+            ]
+        },
+
     ],
     herobanners: {
         banner1: {
