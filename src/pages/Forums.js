@@ -6,8 +6,8 @@ import Breadcrumb from "../components/common/Breadcrumb";
 import ForumsCategories from "../components/other/categories/ForumsCategories";
 import breadcrumbimg from "../assets/images/bread-bg.jpg";
 import { TiArrowUnsorted, TiBrush } from "react-icons/ti";
-import img1 from "../assets/images/img1.jpg"; // 263*175
-import gitlogo from "../assets/images/git-logo.png";
+import img1 from "./../assets/images/img1.jpg"; // 263*175
+//import gitlogo from "./../assets/images/git-logo.png";
 
 import Select from "react-select";
 
@@ -209,7 +209,7 @@ function About() {
                     />
                   </td>
                   <td style={{ width: 50 }}>
-                    <img width="45" height="45" src={gitlogo} />
+                    {/* <img width="45" height="45" src={gitlogo} /> */}
                   </td>
                   <td>Facebook Blueprint</td>
                   <td>Newly released courses, holiday marketing tips</td>
