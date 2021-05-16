@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
-import "react-quill/dist/quill.snow.css";
 import GeneralHeader from "../components/common/GeneralHeader";
 import Button from "../components/common/Button";
 import ForumsCategories from "../components/other/categories/ForumsCategories";

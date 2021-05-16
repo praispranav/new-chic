@@ -172,7 +172,7 @@ function About() {
                         options={viewOptions}
                         menuPortalTarget={document.body}
                       />
-                      <button role="button" className="refresh-button ml-2">
+                      <button role="button" className="page-nav-btn ml-2">
                         <span>
                           <FiRefreshCw />
                         </span>

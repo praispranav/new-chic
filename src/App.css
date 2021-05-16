@@ -283,3 +283,7 @@ ul {
 .forum-cat-fig:hover .fig-caption .cat-fig-box .cat-content .badge {
   background-color: #ff6b6b;
 }
+
+.view-selector{
+  width: 200px;
+}
