@@ -23,12 +23,13 @@ export default function HeaderAuthorAccess() {
                         <WidgetSearchTwo />
                     </li>
                 </ul>
-                <div className="side-user-menu-open" onClick={() => setAuthorAccessOpen(!AuthorAccessOpen)}>
+            {/*    <div className="side-user-menu-open" onClick={() => setAuthorAccessOpen(!AuthorAccessOpen)}>
                     <AiOutlineUser />
-                </div>
+                </div> */}
             </div>
 
             {/* Side User panel */}
+			{/*
             <div className={AuthorAccessOpen ? 'side-user-panel active' : 'side-user-panel'}>
                 <div className="humburger-menu">
                     <div className="humburger-menu-lines side-menu-close" onClick={() => setAuthorAccessOpen(!AuthorAccessOpen)}></div>
@@ -66,7 +67,7 @@ export default function HeaderAuthorAccess() {
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
