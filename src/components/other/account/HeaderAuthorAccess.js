@@ -14,11 +14,11 @@ export default function HeaderAuthorAccess() {
         <>
             <div className="logo-right-content">
                 <ul className="author-access-list">
-                    <li>
+                  {/* <li>
                         <Link to="/login">login</Link>
                         <span className="or-text">or</span>
                         <Link to="/sign-up">Sign up</Link>
-                    </li>
+                    </li>  */}
                     <li>
                         <WidgetSearchTwo />
                     </li>
