@@ -131,21 +131,22 @@ const sectiondata = {
             path: '/all-categories',
             dropdown: [
                 {
-                    title: 'all categories',
-                    path: '/all-categories'
+                    title: 'Contact Us',
+                    path: '/contact-us'
                 },
                 {
-                    title: 'all locations',
-                    path: '/all-locations'
+                    title: 'Features',
+                    path: '/features'
                 },
                 {
-                    title: 'top places',
-                    path: '/top-place'
+                    title: 'Services',
+                    path: '/services'
                 }
             ]
         },
         {
             title: 'Subscriptions',
+			
             path: '/listing-grid',
             dropdown: [
                 {
@@ -179,7 +180,20 @@ const sectiondata = {
                 {
                     title: 'add listing',
                     path: '/add-listing/new'
+                },
+                {
+                    title: 'all categories',
+                    path: '/all-categories'
+                },
+                {
+                    title: 'all locations',
+                    path: '/all-locations'
+                },
+                {
+                    title: 'top places',
+                    path: '/top-place'
                 }
+				
             ]
         },
         {
@@ -315,38 +329,12 @@ const sectiondata = {
             ]
         },
 	    {
-            title: 'Contact Us',
-            path: '/blog-full-width',
-            dropdown: [
-                {
-                    title: 'full width',
-                    path: '/blog-full-width'
-                },
-                {
-                    title: 'blog grid',
-                    path: '/blog-grid'
-                },
-                {
-                    title: 'left sidebar',
-                    path: '/blog-left-sidebar'
-                },
-                {
-                    title: 'right sidebar',
-                    path: '/blog-right-sidebar'
-                },
-                {
-                    title: 'blog detail',
-                    path: '/blog-single'
-                }
-            ]
-        },
-	    {
             title: 'Login',
             path: '/blog-full-width',
             dropdown: [
                 {
                     title: 'Log In',
-                    path: '/Sign-in'
+                    path: '/login'
                 },
                 {
                     title: 'Sign-up',
