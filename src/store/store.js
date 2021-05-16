@@ -262,7 +262,7 @@ const sectiondata = {
                 }
             ]
         },
-		        {
+	    {
             title: 'Materia Medica',
             path: '/blog-full-width',
             dropdown: [
@@ -314,6 +314,50 @@ const sectiondata = {
                 }
             ]
         },
+	    {
+            title: 'Contact Us',
+            path: '/blog-full-width',
+            dropdown: [
+                {
+                    title: 'full width',
+                    path: '/blog-full-width'
+                },
+                {
+                    title: 'blog grid',
+                    path: '/blog-grid'
+                },
+                {
+                    title: 'left sidebar',
+                    path: '/blog-left-sidebar'
+                },
+                {
+                    title: 'right sidebar',
+                    path: '/blog-right-sidebar'
+                },
+                {
+                    title: 'blog detail',
+                    path: '/blog-single'
+                }
+            ]
+        },
+	    {
+            title: 'Login',
+            path: '/blog-full-width',
+            dropdown: [
+                {
+                    title: 'Log In',
+                    path: '/Sign-in'
+                },
+                {
+                    title: 'Sign-up',
+                    path: '/sign-up'
+                },
+                {
+                    title: 'Recover Password',
+                    path: '/recover-password'
+                }
+            ]
+        },		
 
     ],
     herobanners: {
