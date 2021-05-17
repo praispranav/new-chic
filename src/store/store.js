@@ -127,25 +127,26 @@ const sectiondata = {
             ]
         },
         {
-            title: 'categories',
+            title: 'About Us',
             path: '/all-categories',
             dropdown: [
                 {
-                    title: 'all categories',
-                    path: '/all-categories'
+                    title: 'Contact Us',
+                    path: '/contact-us'
                 },
                 {
-                    title: 'all locations',
-                    path: '/all-locations'
+                    title: 'Features',
+                    path: '/features'
                 },
                 {
-                    title: 'top places',
-                    path: '/top-place'
+                    title: 'Services',
+                    path: '/services'
                 }
             ]
         },
         {
-            title: 'listings',
+            title: 'Subscriptions',
+			
             path: '/listing-grid',
             dropdown: [
                 {
@@ -179,11 +180,24 @@ const sectiondata = {
                 {
                     title: 'add listing',
                     path: '/add-listing/new'
+                },
+                {
+                    title: 'all categories',
+                    path: '/all-categories'
+                },
+                {
+                    title: 'all locations',
+                    path: '/all-locations'
+                },
+                {
+                    title: 'top places',
+                    path: '/top-place'
                 }
+				
             ]
         },
         {
-            title: 'pages',
+            title: 'Acupuncture',
             path: '/user-profile',
             dropdown: [
                 {
@@ -237,7 +251,7 @@ const sectiondata = {
             ]
         },
         {
-            title: 'blog',
+            title: 'Formulas',
             path: '/blog-full-width',
             dropdown: [
                 {
@@ -262,6 +276,77 @@ const sectiondata = {
                 }
             ]
         },
+	    {
+            title: 'Materia Medica',
+            path: '/blog-full-width',
+            dropdown: [
+                {
+                    title: 'full width',
+                    path: '/blog-full-width'
+                },
+                {
+                    title: 'blog grid',
+                    path: '/blog-grid'
+                },
+                {
+                    title: 'left sidebar',
+                    path: '/blog-left-sidebar'
+                },
+                {
+                    title: 'right sidebar',
+                    path: '/blog-right-sidebar'
+                },
+                {
+                    title: 'blog detail',
+                    path: '/blog-single'
+                }
+            ]
+        },
+        {
+            title: 'Forums',
+            path: '/blog-full-width',
+            dropdown: [
+                {
+                    title: 'full width',
+                    path: '/blog-full-width'
+                },
+                {
+                    title: 'blog grid',
+                    path: '/blog-grid'
+                },
+                {
+                    title: 'left sidebar',
+                    path: '/blog-left-sidebar'
+                },
+                {
+                    title: 'right sidebar',
+                    path: '/blog-right-sidebar'
+                },
+                {
+                    title: 'blog detail',
+                    path: '/blog-single'
+                }
+            ]
+        },
+	    {
+            title: 'Login',
+            path: '/blog-full-width',
+            dropdown: [
+                {
+                    title: 'Log In',
+                    path: '/login'
+                },
+                {
+                    title: 'Sign-up',
+                    path: '/sign-up'
+                },
+                {
+                    title: 'Recover Password',
+                    path: '/recover-password'
+                }
+            ]
+        },		
+
     ],
     herobanners: {
         banner1: {

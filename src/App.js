@@ -6,8 +6,12 @@ import ScrollReveal from './utils/ScrollReveal';
 
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
-// import Forums from './pages/Forums';
 
+import Forums from './pages/Forums';
+
+import Forums from './pages/Forums';
+import PostCompose from './pages/PostCompose';
+import TopicDetail from './pages/TopicDetail';
 // Pages
 import Home from "./pages/homes/Home";
 // import Home2 from './pages/homes/Home2';
@@ -131,7 +135,9 @@ const App = () => {
               <AppRoute path="/blog-right-sidebar" component={BlogRightSidebar} />
               <AppRoute path="/login" component={Login} />
               <AppRoute path="/sign-up" component={SignUp} /> */}
-              {/* <AppRoute path="/forums" component={Forums} /> */}
+              <AppRoute path="/forums" component={Forums} /> 
+              <AppRoute path="/post-compose" component={PostCompose} />
+              <AppRoute path="/post-detail" component={TopicDetail} />
               <AppRoute component={Error} />
           </Switch>
         )} />
