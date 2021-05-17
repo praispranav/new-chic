@@ -79,7 +79,7 @@ function BlogFullWidth(props) {
                                 <Typography variant="h5">Meridians : </Typography><br />
                                 {/* space for meridian */}
                                 <div>
-                                    <select name="cars" id="cars" ref={meridian}>
+                                    <select name="meridian" id="meridian" ref={meridian}>
                                         {Meridian}
                                     </select>
                                 </div>

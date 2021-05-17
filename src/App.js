@@ -1,5 +1,5 @@
-import React, { useState ,useContext, useRef, useEffect, useReducer } from 'react';
-import { useLocation, Switch, useParams } from 'react-router-dom';
+import React, { useRef, useEffect, useReducer } from 'react';
+import { useLocation, Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
 
@@ -40,7 +40,7 @@ import Home from "./pages/homes/Home";
 // import Faq from "./pages/FAQ";
 // import Contact from "./pages/Contact";
 // import RecoverPassword from "./pages/RecoverPassword";
-import Acupuncture from "./pages./pages/blogs/acupuncture
+import Acupuncture from "./pages./pages/blogs/acupuncture";
 // import BlogGrid from "./pages/blogs/BlogGrid";
 // import BlogLeftSidebar from "./pages/blogs/BlogLeftSidebar";
 // import BlogRightSidebar from "./pages/blogs/BlogRightSidebar";
