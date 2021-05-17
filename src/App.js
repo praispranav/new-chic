@@ -40,11 +40,11 @@ import Home from "./pages/homes/Home";
 // import Faq from "./pages/FAQ";
 // import Contact from "./pages/Contact";
 // import RecoverPassword from "./pages/RecoverPassword";
-import BlogFullWidth from "./pages/blogs/acupunture";
+import Acupuncture from "./pages./pages/blogs/acupuncture
 // import BlogGrid from "./pages/blogs/BlogGrid";
 // import BlogLeftSidebar from "./pages/blogs/BlogLeftSidebar";
 // import BlogRightSidebar from "./pages/blogs/BlogRightSidebar";
-import BlogDetail from "./pages/blogs/acupoint";
+import AcupuncturePoint from "./pages/blogs/acupoint";
 // import Login from "./pages/Login";
 // import SignUp from "./pages/SignUp";
 // import Error from "./pages/Error";
@@ -126,9 +126,9 @@ const App = () => {
               <AppRoute path="/recover" component={RecoverPassword} /> */}
               <AppRoute path="/acupuncture/:name" component={(event)=> 
                 <div>
-                  <BlogDetail name={event}/>
+                  <AcupuncturePoint name={event}/>
                   </div>} />
-              <AppRoute path="/acupuncture" component={BlogFullWidth} />
+              <AppRoute path="/acupuncture" component={Acupuncture} />
 
               {/* <AppRoute path="/blog-grid" component={BlogGrid} />
               <AppRoute path="/blog-left-sidebar" component={BlogLeftSidebar} />
