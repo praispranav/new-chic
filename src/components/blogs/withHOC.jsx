@@ -24,7 +24,7 @@ const withHOC = (WrappedComponent) =>{
         },[])
 
         return(
-            <>{console.log(props)}
+            <>
             <WrappedComponent isLoading={isLoading}
                                 context={context}
                                 state={state}
