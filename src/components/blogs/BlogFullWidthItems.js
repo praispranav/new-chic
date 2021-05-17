@@ -18,7 +18,7 @@ function BlogFullWidthItems(props){
             return it.meridian === context.state.activeFilter
         }
         else{
-            return it.name.includes(context.state.activeFilter.toUpperCase())
+            return it.letter_1.includes(context.state.activeFilter.toUpperCase()) || it.letter_2.includes(context.state.activeFilter.toUpperCase()) 
         }
     }
     ).map((item)=>

@@ -1,10 +1,9 @@
-import React,{useEffect,useState, useContext} from 'react';
+import React,{useEffect,useState, useRef, useContext} from 'react';
 import GeneralHeader from "../../components/common/GeneralHeader";
 import Breadcrumb from "../../components/common/Breadcrumb";
 
 import BlogFullWidthItems from "../../components/blogs/BlogFullWidthItems";
 import withHOC from "../../components/blogs/withHOC";
-// import MeridianHandler from "../../components/blogs/MeridianHandler";
 import Pagination from "../../components/blogs/Pagination";
 import ListingDetailsComments from "../../components/contact/ListingDetailsComments";
 import BlogCommentFields from "../../components/blogs/BlogCommentFields";
@@ -15,24 +14,8 @@ import Footer from "../../components/common/footer/Footer";
 import ScrollTopBtn from "../../components/common/ScrollTopBtn";
 import bg from "../../assets/images/custom/bg.jpg"
 import Typography from "@material-ui/core/Typography"
-import TextField from "@material-ui/core/TextField"
-import Button from "@material-ui/core/Button"
-
 import flag1 from "../../assets/images/custom/flag1.jpg"
 import { UserContext } from '../../App';
-
-
-// const Red = () =>{
-//     const context = useContext(UserContext)
-//     return(
-//         <div
-//             style={{}} className="sidefilter">
-//             <Typography variant="body1"><small>{context.state.activeFilter.length > 3? 
-//                 context.state.activeFilter : "Hand Yin Lung Meridian (LU) (手太阴肺经穴, 手太陰肺經)" }</small></Typography>
-//         </div>
-//     )
-// }
-
 
 function BlogFullWidth(props) {
     const { isLoading, state, error, open  } = props
@@ -40,10 +23,16 @@ function BlogFullWidth(props) {
     const context = useContext(UserContext)
     const [ statE, setstatE ] = useState(false)
     const [ isOpen , setisOpen ] = useState(false)
+    const meridian = useRef()
     const handleClick=()=> {
         setisOpen(false)
     }
-    // const newList = context.state.meridian
+
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        console.log("Meirdian Refs", meridian.current.value)
+        context.dispatch({type:"filter", value: meridian.current.value})
+    }
 
     const newList = []
     state.forEach((value)=>{
@@ -52,7 +41,11 @@ function BlogFullWidth(props) {
         }
     })
 
-    const Meridian = newList.map((item)=> <option value={item}>{item}</option>)
+    const Meridian = newList.map((item)=> 
+                                            <option 
+                                                id={item} 
+                                                value={item}>{item}
+                                            </option>)
     return (
         <main className="blog-fullwidth-page">
             {/* Header */}
@@ -83,11 +76,12 @@ function BlogFullWidth(props) {
                             
                             <hr />
                             <br />
+                            <form onSubmit={(e)=> handleSubmit(e)}>
                             <div style={{}}>
                                 <Typography variant="h5">Meridians : </Typography><br />
                                 {/* space for meridian */}
                                 <div>
-                                    <select name="cars" id="cars">
+                                    <select name="cars" id="cars" ref={meridian}>
                                         {Meridian}
                                     </select>
                                 </div>
@@ -100,6 +94,7 @@ function BlogFullWidth(props) {
                                     </button>
                                 </div>
                             </div>
+                            </form>
 
 
                             {/* <NewsLetter newsLetterContent={sectiondata.calltoactions.newsletters} /> */}
@@ -119,7 +114,7 @@ function BlogFullWidth(props) {
             <br />
             <div className="container">
                 <div className="row">
-                    <div className={ state ? "col-lg-6 mycustomtopicinactive" :
+                    <div className={ statE ? "col-lg-6 mycustomtopicinactive" :
                              "col-lg-6 mycustomtopicactive"}>
 
                         <div 
