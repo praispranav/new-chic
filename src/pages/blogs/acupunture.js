@@ -74,6 +74,7 @@ function BlogFullWidth() {
                                     onClick={()=> context.dispatch({type:"isopen", value: true})}>
                                     <Red />
                                 </div>
+                                <br />
                                 <div style={{textAlign:"right"}}>
                                             <button className="theme-btn border-0" type="submit" value="submit">
                                                 <i className="la la-paper-plane"></i> Submit

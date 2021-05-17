@@ -13,6 +13,7 @@ function NewsLetter({newsLetterContent}) {
     const constraintsRef = useRef(null)
     return (
         <>
+        <div className="container">
         <motion.div ref={constraintsRef}>
             <motion.div  
                     drag
@@ -40,6 +41,7 @@ function NewsLetter({newsLetterContent}) {
                 </div> 
              </motion.div>
         </motion.div>
+        </div>
         </>
     );
 }
