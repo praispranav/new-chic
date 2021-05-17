@@ -37,6 +37,10 @@ const Red = () =>{
 function BlogFullWidth() {
     const context = useContext(UserContext)
     const [ state, setstate ] = useState(false)
+    const [ isOpen , setisOpen ] = useState(false)
+    const handleClick=()=> {
+        setisOpen(false)
+    }
     // const newList = context.state.meridian
     return (
         <main className="blog-fullwidth-page">
@@ -67,11 +71,25 @@ function BlogFullWidth() {
                             
                             <hr />
                             <br />
-                            <div style={{}}>
+                            {/* <div style={{}}>
                                 <Typography variant="h5">Meridians : </Typography><br />
                                 <div onMouseEnter={()=> context.dispatch({type:"isopen", value: true})} 
                                     style={ context.state.isOpen ? {display:"none"}: {display:"block"}} 
                                     onClick={()=> context.dispatch({type:"isopen", value: true})}>
+                                    <Red />
+                                </div>
+                                <br />
+                                <div style={{textAlign:"right"}}>
+                                            <button className="theme-btn border-0" type="submit" value="submit">
+                                                <i className="la la-paper-plane"></i> Submit
+                                            </button>
+                                </div>
+                            </div> */}
+                            <div style={{}}>
+                                <Typography variant="h5">Meridians : </Typography><br />
+                                <div onMouseEnter={()=> setisOpen(true)} 
+                                    style={ isOpen ? {display:"none"}: {display:"block"}} 
+                                    onClick={()=> setisOpen(true)}>
                                     <Red />
                                 </div>
                                 <br />
@@ -125,7 +143,7 @@ function BlogFullWidth() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <BlogFullWidthItems  />
+                            <BlogFullWidthItems open={isOpen} handleClick={()=> handleClick()} />
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,6 @@ const withHOC = (WrappedComponent) =>{
                     const response = await axios.get(url)
                     setstate(response.data)
                     setIsLoading(false)
-                    console.log("hello")
                 }
                 fetchData()
             }
@@ -25,11 +24,15 @@ const withHOC = (WrappedComponent) =>{
         },[])
 
         return(
+            <>{console.log(props)}
             <WrappedComponent isLoading={isLoading}
                                 context={context}
                                 state={state}
                                 error={error}
+                                open={props.open}
+                                handleClick={()=> props.handleClick()}
                                 name={props.name != null ? props.name.match.params.name : null  } />
+            </>
         )
     }
     return NewComponent

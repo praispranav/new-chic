@@ -44,7 +44,7 @@ function MeridianHandler(props) {
     return (
    <>
     
-    <div className="mycustomscroll" style={ context.state.isOpen ? {
+    <div className="mycustomscroll" style={ props.open ? {
             display:"block",
             width:"80vw",
             position:"fixed",
@@ -58,10 +58,10 @@ function MeridianHandler(props) {
 
         :{display:"none"}}
 
-        onMouseLeave={()=> context.dispatch({type:"isopen",value:false})}>
+        onMouseLeave={()=> props.handleClick(false)}>
             
         <div style={{textAlign:"right", paddingRight:"1em", paddingTop:"10px"}} 
-            onClick={()=> context.dispatch({type:"isopen",value:false})}>
+            onClick={()=> props.handleClick(false)}>
             
             <CloseIcon fontSize="large" />
         </div>

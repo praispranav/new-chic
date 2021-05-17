@@ -8,7 +8,7 @@ import withHOC from './withHOC';
 
 
 function BlogFullWidthItems(props){
-    const { isLoading, state, error } = props
+    const { isLoading, state, error, open  } = props
     const context = useContext(UserContext)
 
     const Array = state != null ?  state.map((item)=> <Link to={`/acupuncture/${item.name}`}>
@@ -44,7 +44,7 @@ function BlogFullWidthItems(props){
 
     return(
         <>
-        <MeridianHandler meridian={newList} /><br />
+        <MeridianHandler meridian={newList} handleClick={()=> props.handleClick()} open={open} /><br />
         <div style={ isLoading ? {display:"block", textAlign:"center"} : {display:"none"}}>
                 <div className="loading"></div>
             <h1>Loading .....</h1>

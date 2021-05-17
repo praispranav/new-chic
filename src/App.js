@@ -7,7 +7,7 @@ import ScrollReveal from './utils/ScrollReveal';
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
 
-import Forums from './pages/Forums';
+// import Forums from './pages/Forums';
 
 import Forums from './pages/Forums';
 import PostCompose from './pages/PostCompose';
