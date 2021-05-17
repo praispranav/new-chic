@@ -1,9 +1,10 @@
 import React,{useEffect,useState, useContext} from 'react';
 import GeneralHeader from "../../components/common/GeneralHeader";
 import Breadcrumb from "../../components/common/Breadcrumb";
-import BlogSidebar from "../../components/sidebars/BlogSidebar";
+
 import BlogFullWidthItems from "../../components/blogs/BlogFullWidthItems";
-import MeridianHandler from "../../components/blogs/MeridianHandler";
+import withHOC from "../../components/blogs/withHOC";
+// import MeridianHandler from "../../components/blogs/MeridianHandler";
 import Pagination from "../../components/blogs/Pagination";
 import ListingDetailsComments from "../../components/contact/ListingDetailsComments";
 import BlogCommentFields from "../../components/blogs/BlogCommentFields";
@@ -18,33 +19,44 @@ import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 
 import flag1 from "../../assets/images/custom/flag1.jpg"
-import {motion } from "framer-motion"
 import { UserContext } from '../../App';
 
 
-const Red = () =>{
-    const context = useContext(UserContext)
-    return(
-        <div
-            style={{}} className="sidefilter">
-            <Typography variant="body1"><small>{context.state.activeFilter.length > 3? 
-                context.state.activeFilter : "Hand Yin Lung Meridian (LU) (手太阴肺经穴, 手太陰肺經)" }</small></Typography>
-        </div>
-    )
-}
+// const Red = () =>{
+//     const context = useContext(UserContext)
+//     return(
+//         <div
+//             style={{}} className="sidefilter">
+//             <Typography variant="body1"><small>{context.state.activeFilter.length > 3? 
+//                 context.state.activeFilter : "Hand Yin Lung Meridian (LU) (手太阴肺经穴, 手太陰肺經)" }</small></Typography>
+//         </div>
+//     )
+// }
 
 
-function BlogFullWidth() {
+function BlogFullWidth(props) {
+    const { isLoading, state, error, open  } = props
+    
     const context = useContext(UserContext)
-    const [ state, setstate ] = useState(false)
+    const [ statE, setstatE ] = useState(false)
     const [ isOpen , setisOpen ] = useState(false)
     const handleClick=()=> {
         setisOpen(false)
     }
     // const newList = context.state.meridian
+
+    const newList = []
+    state.forEach((value)=>{
+        if(newList.indexOf(value.meridian) == -1){
+            newList.push(value.meridian)
+        }
+    })
+
+    const Meridian = newList.map((item)=> <option value={item}>{item}</option>)
     return (
         <main className="blog-fullwidth-page">
             {/* Header */}
+            {console.log("Meridian List",newList)}
             <GeneralHeader />
 
             {/* Breadcrumb */}
@@ -71,32 +83,21 @@ function BlogFullWidth() {
                             
                             <hr />
                             <br />
-                            {/* <div style={{}}>
-                                <Typography variant="h5">Meridians : </Typography><br />
-                                <div onMouseEnter={()=> context.dispatch({type:"isopen", value: true})} 
-                                    style={ context.state.isOpen ? {display:"none"}: {display:"block"}} 
-                                    onClick={()=> context.dispatch({type:"isopen", value: true})}>
-                                    <Red />
-                                </div>
-                                <br />
-                                <div style={{textAlign:"right"}}>
-                                            <button className="theme-btn border-0" type="submit" value="submit">
-                                                <i className="la la-paper-plane"></i> Submit
-                                            </button>
-                                </div>
-                            </div> */}
                             <div style={{}}>
                                 <Typography variant="h5">Meridians : </Typography><br />
-                                <div onMouseEnter={()=> setisOpen(true)} 
-                                    style={ isOpen ? {display:"none"}: {display:"block"}} 
-                                    onClick={()=> setisOpen(true)}>
-                                    <Red />
+                                {/* space for meridian */}
+                                <div>
+                                    <select name="cars" id="cars">
+                                        {Meridian}
+                                    </select>
+                                </div>
+                                <div >
                                 </div>
                                 <br />
                                 <div style={{textAlign:"right"}}>
-                                            <button className="theme-btn border-0" type="submit" value="submit">
-                                                <i className="la la-paper-plane"></i> Submit
-                                            </button>
+                                    <button className="theme-btn border-0" type="submit" value="submit">
+                                        <i className="la la-paper-plane"></i> Submit
+                                    </button>
                                 </div>
                             </div>
 
@@ -123,33 +124,38 @@ function BlogFullWidth() {
 
                         <div 
                             className="mytopicmobile mytopic1"
-                            style={ state ? {background:"rgba(255,255,255,0)"} : {padding:"0.5em"}} 
-                            onClick={()=> setstate(false)}>
+                            style={ statE ? {background:"rgba(255,255,255,0)"} : {padding:"0.5em"}} 
+                            onClick={()=> setstatE(false)}>
                             <Typography variant="h6" style={ state ? {}:  {color: "red"}}>Accu-Points</Typography>
                         </div>
                     </div>
-                    <div className={ state ? "col-lg-6 mycustomtopicactive":"col-lg-6 mycustomtopicinactive"} >
+                    <div className={ statE ? "col-lg-6 mycustomtopicactive":"col-lg-6 mycustomtopicinactive"} >
                         <div 
                                 className="mytopicmobile mytopic1"
-                                style={ state ? {padding:"0.5em"}: {background:"rgba(255,255,255,0)"}} 
-                                onClick={()=> setstate(true)}>
-                            <Typography variant="h6" style={ state ? {color: "red"}: {}}>Topic and Comments</Typography>
+                                style={ statE ? {padding:"0.5em"}: {background:"rgba(255,255,255,0)"}} 
+                                onClick={()=> setstatE(true)}>
+                            <Typography variant="h6" style={ statE ? {color: "red"}: {}}>Topic and Comments</Typography>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <section className="blog-grid padding-top-40px padding-bottom-100px" style={ state ? {display:"none"} : {display:"block"}}>
+            <section className="blog-grid padding-top-40px padding-bottom-100px" style={ statE ? {display:"none"} : {display:"block"}}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <BlogFullWidthItems open={isOpen} handleClick={()=> handleClick()} />
+                            <BlogFullWidthItems 
+                                open={isOpen} 
+                                state={state}
+                                isLoading={isLoading}
+                                error={error}  
+                                handleClick={()=> handleClick()} />
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section style={state ? {display:"block", marginTop:"4em"} : {display:"none"}}>
+            <section style={statE ? {display:"block", marginTop:"4em"} : {display:"none"}}>
             <div className="container">
                 <div className="comments-wrap">
                         <h2 className="widget-title">3 Comments</h2>
@@ -184,4 +190,4 @@ function BlogFullWidth() {
     );
 }
 
-export default React.memo(BlogFullWidth);
+export default withHOC(React.memo(BlogFullWidth));

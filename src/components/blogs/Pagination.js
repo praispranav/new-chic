@@ -7,12 +7,14 @@ import { UserContext } from "../../App"
 function Pagination() {
     const context = useContext(UserContext)
     const activeFilter = context.state.activeFilter
+    
     const handleClick = (event) =>{
-        console.log(event)
-        // setActiveFilter(event)
-        context.dispatch({type:'filter', value: event})
+        console.log(event.toUpperCase())
+        context.dispatch({ type: 'filter', value: event })
     }
+    
     const color = { background: "linear-gradient(to bottom right,red, pink)", color: "white", boxShadow: "2px 2px 4px rgb(200,200,200)" }
+    
     return (
         <>
             <div className="pagination-wrapper mt-4 text-center">

@@ -20,7 +20,7 @@ function BlogDetail(props,event) {
             <GeneralHeader />
 
             {/* Breadcrumb */}
-            <Breadcrumb CurrentPgTitle="Blog Detail" MenuPgTitle="Blog" img={bg} />
+            <Breadcrumb CurrentPgTitle="Acupuncture Point" MenuPgTitle="Acupuncture" img={bg} />
                 
             <section className="blog-single-area padding-top-40px padding-bottom-70px">
                 <div className="container">

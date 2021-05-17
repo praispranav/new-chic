@@ -12,9 +12,12 @@ const withHOC = (WrappedComponent) =>{
         useEffect( ()=>{
             if(isLoading){
                 async function fetchData(){
-                    const response = await axios.get(url)
-                    setstate(response.data)
-                    setIsLoading(false)
+                    await axios.get(url)
+                        .then((res)=> {
+                            setstate(res.data)
+                            setIsLoading(false)
+                        })
+                        .catch((err)=> seterror(true))
                 }
                 fetchData()
             }

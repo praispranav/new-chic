@@ -50,10 +50,8 @@ function BlogDetailContent(props) {
     <br />
     <br />
     <div className="breadcrumb" style={{ display:"flex", alignItems:"center"}}>
-        <Link to="/"><Typography variant="h6" style={{fontSize:"14px", margin:"auto 1em"}}>Home</Typography></Link>
-        /
-        <Link to="/acupuncture"><Typography variant="h6" style={{fontSize:"14px", margin:"auto 1em"}}>Acupuncture</Typography></Link>
-        /
+        <Link to="/"><Typography variant="h6" style={{fontSize:"14px", margin:"auto 1em"}}>Home</Typography></Link>/
+        <Link to="/acupuncture"><Typography variant="h6" style={{fontSize:"14px", margin:"auto 1em"}}>Acupuncture</Typography></Link>/
         <Typography variant="h6" style={{fontSize:"14px", margin:"auto 1em"}}>{name}</Typography>
     </div>
     <Typography variant="h4" style={{color:"rgb(100,100,100)"}}>Epithet</Typography><br />

@@ -1,11 +1,7 @@
-
 import React,{useState,useEffect, useContext } from 'react';
 import { UserContext } from "../../App"
 import BlogFullWidthArray from "./BlogFullWidthArray"
-import MeridianHandler from "./MeridianHandler"
 import { Link } from "react-router-dom"
-import withHOC from './withHOC';
-
 
 function BlogFullWidthItems(props){
     const { isLoading, state, error, open  } = props
@@ -22,7 +18,7 @@ function BlogFullWidthItems(props){
             return it.meridian === context.state.activeFilter
         }
         else{
-            return it.name.includes(context.state.activeFilter)
+            return it.name.includes(context.state.activeFilter.toUpperCase())
         }
     }
     ).map((item)=>
@@ -33,18 +29,9 @@ function BlogFullWidthItems(props){
         </Link> ) : "Loading...." ;
     
     const FilterActive = context.state.activeFilter === 'all' ? Array : FilteredArray
-
-    const newList = []
-    state.forEach((value)=>{
-        if(newList.indexOf(value.meridian) == -1){
-            newList.push(value.meridian)
-        }
-    })
-    
-
     return(
         <>
-        <MeridianHandler meridian={newList} handleClick={()=> props.handleClick()} open={open} /><br />
+        {/* <MeridianHandler meridian={newList} handleClick={()=> props.handleClick()} open={open} /><br /> */}
         <div style={ isLoading ? {display:"block", textAlign:"center"} : {display:"none"}}>
                 <div className="loading"></div>
             <h1>Loading .....</h1>
@@ -61,4 +48,4 @@ function BlogFullWidthItems(props){
     )
 }
 
-export default withHOC(React.memo(BlogFullWidthItems));
+export default React.memo(BlogFullWidthItems);
