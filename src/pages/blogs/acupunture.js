@@ -30,7 +30,6 @@ function BlogFullWidth(props) {
 
     const handleSubmit = (event)=>{
         event.preventDefault();
-        console.log("Meirdian Refs", meridian.current.value)
         context.dispatch({type:"filter", value: meridian.current.value})
     }
 
@@ -49,7 +48,6 @@ function BlogFullWidth(props) {
     return (
         <main className="blog-fullwidth-page">
             {/* Header */}
-            {console.log("Meridian List",newList)}
             <GeneralHeader />
 
             {/* Breadcrumb */}

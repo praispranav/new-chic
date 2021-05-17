@@ -9,7 +9,6 @@ function Pagination() {
     const activeFilter = context.state.activeFilter
     
     const handleClick = (event) =>{
-        console.log(event.toUpperCase())
         context.dispatch({ type: 'filter', value: event })
     }
     
