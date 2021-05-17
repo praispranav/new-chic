@@ -150,7 +150,7 @@ function About() {
           <table className="table title-table">
             <thead>
               <tr>
-                <td className="bg-header">
+                <td className="bg-header" style={{verticalAlign: 'middle'}}>
                   <input
                     type="checkbox"
                     checked={isAllChecked}
