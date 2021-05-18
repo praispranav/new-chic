@@ -150,18 +150,20 @@ function About() {
           <table className="table title-table">
             <thead>
               <tr>
-                <td className="bg-header">
-                  <input
-                    type="checkbox"
-                    checked={isAllChecked}
-                    onClick={() => setIsAllChecked(!isAllChecked)}
-                    style={{
-                      height: "1rem",
-                      width: "1rem",
-                      verticalAlign: "middle",
-                    }}
-                  />
-                </td>
+                {
+                //   <td className="bg-header">
+                //   <input
+                //     type="checkbox"
+                //     checked={isAllChecked}
+                //     onClick={() => setIsAllChecked(!isAllChecked)}
+                //     style={{
+                //       height: "1rem",
+                //       width: "1rem",
+                //       verticalAlign: "middle",
+                //     }}
+                //   />
+                // </td>
+              }
                 <th colSpan="6">
                   <div className="d-flex justify-content-between">
                     <div className="d-flex">
@@ -197,20 +199,24 @@ function About() {
             <tbody>
               {["", "", "", "", "", "", "", "", "", ""].map((el, index) => (
                 <tr key={index}>
-                  <td className="center-checkbox">
-                    <input
-                      type="checkbox"
-                      checked={isAllChecked}
-                      style={{
-                        height: "1rem",
-                        width: "1rem",
-                        verticalAlign: "middle",
-                      }}
-                    />
-                  </td>
-                  <td style={{ width: 50 }}>
-                    {/* <img width="45" height="45" src={gitlogo} /> */}
-                  </td>
+                  {
+                  //   <td className="center-checkbox">
+                  //   <input
+                  //     type="checkbox"
+                  //     checked={isAllChecked}
+                  //     style={{
+                  //       height: "1rem",
+                  //       width: "1rem",
+                  //       verticalAlign: "middle",
+                  //     }}
+                  //   />
+                  // </td>
+                }
+                  {
+                  //   <td style={{ width: 50 }}>
+                  //   {/* <img width="45" height="45" src={gitlogo} /> */}
+                  // </td>
+                }
                   <td>Facebook Blueprint</td>
                   <td>Newly released courses, holiday marketing tips</td>
                   <td style={{ width: 10 }}>*</td>
