@@ -65,7 +65,7 @@ function BlogDetailContent(props) {
     <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Vietnamese : {item.vietnamese}</li>
                 <br />
                             <div style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
-                                <div style={{display:"inline-flex",width:"80vw",overflowX:"auto", textAlign:"center"}} className="custom-scroll">
+                                <div style={{display:"inline-flex",width:"80vw",flexFlow:"row wrap", textAlign:"center"}} className="custom-scroll">
                                         <CustomNav name="Profile" activenav={activeNav} handleClick={(event)=> setactiveNav(event)} />
                                         <CustomNav name="Topic and Comments" activenav={activeNav} handleClick={(event)=> setactiveNav(event)} />
                                         <CustomNav name="Function" activenav={activeNav} handleClick={(event)=> setactiveNav(event)} />
