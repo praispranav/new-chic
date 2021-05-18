@@ -77,7 +77,7 @@ function BlogDetailContent(props) {
                 <br />
     </ul>
     <ul style={ activeNav == 'Profile' ? {display:"block"}: {display:"none"}}>            
-    <li className="myliststyle"><CheckIcon className="mycustomliststyle" />PhySical Location : {item.physicalLocation}</li>
+    <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Physical Location : {item.physicalLocation}</li>
     <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Five Elements : {item.fiveElement}</li>
     <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Horary Cycle : {item.horarycycle}</li>
     <li className="myliststyle"><CheckIcon className="mycustomliststyle" />Functionality : {item.functionality}</li>
