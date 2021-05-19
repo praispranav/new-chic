@@ -1,0 +1,1 @@
+export const apiUrl = { url:"http://itransportindex.com:4500/api" }
