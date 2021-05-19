@@ -50,38 +50,7 @@ import Acupoint from "./pages/blogs/acupoint";
 // import Error from "./pages/Error";
 import "./assets/css/customcss.css"
 
-
-export const UserContext = React.createContext();
-const initialState = {
- activeFilter: 'all',
- meridian: [],
-  activeNav:"Profile",
-  point: {},
-  params: '',
-  isOpen: false
-
-}
-
-const reducer = (state, action)=>{
-  switch(action.type){
-    case 'isopen':
-      return { ...state, isOpen: action.value}
-    case 'filter':
-      return { ...state, activeFilter : action.value}
-    case 'meridian':
-      return { ...state, meridian: action.value}
-    case 'activenav':
-      return{ ...state, activeNav: action.value}
-    case 'point':
-      return { ...state, point: action.value }
-    case 'params':
-      return { ...state, params: action.value}
-  }
-}
-
 const App = () => {
-
-  const [ state , dispatch ] = useReducer(reducer, initialState)
 
   const childRef = useRef();
   let location = useLocation();
@@ -92,7 +61,6 @@ const App = () => {
   }, [location]);
   return (
     <>
-    <UserContext.Provider value={{state: state, dispatch: dispatch}}>
       <ScrollReveal
         ref={childRef}
         children={() => (
@@ -142,8 +110,6 @@ const App = () => {
               <AppRoute component={Error} />
           </Switch>
         )} />
-
-    </UserContext.Provider>
     </>
   );
 }
