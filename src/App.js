@@ -124,17 +124,12 @@ const App = () => {
               <AppRoute path="/faq" component={Faq} />
               <AppRoute path="/contact" component={Contact} />
               <AppRoute path="/recover" component={RecoverPassword} /> */}
-              <AppRoute path="/acupuncture/:name" component={(event)=> 
-                <div>
-                  <Acupuncture name={event}/>
-                  </div>} />
-              <AppRoute path="/acupuncture" component={Acupuncture} />
 
               <AppRoute path="/acupoint/:name" component={(event)=> 
                 <div>
                   <Acupoint name={event}/>
                   </div>} />
-              <AppRoute path="/acupoint" component={Acupoint} />
+              <AppRoute path="/acupuncture" component={Acupuncture} />
 			  
               {/* <AppRoute path="/blog-grid" component={BlogGrid} />
               <AppRoute path="/blog-left-sidebar" component={BlogLeftSidebar} />
