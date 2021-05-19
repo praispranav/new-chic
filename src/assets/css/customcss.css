@@ -217,19 +217,24 @@
   background: -webkit-gradient(linear, left top, right bottom, from(#ebebeb), color-stop(#c8c8c8), to(white));
   background: linear-gradient(to right bottom, #ebebeb, #c8c8c8, white);
   padding: 8px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: .5em;
+  padding-left: .5em;
   color: black;
   border-radius: 50%;
+  min-width: 40px;
+  max-width: 50px;
   -webkit-box-shadow: 2px 2px 4px #d2d2d2;
           box-shadow: 2px 2px 4px #d2d2d2;
 }
 
 .mycustomlist li:hover {
-  color: white;
   background-color: red;
-  -webkit-transition: 2s;
-  transition: 2s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 3px 3px 7px #d2d2d2;
+          box-shadow: 3px 3px 7px #d2d2d2;
 }
 
 .mybuttonstyle {

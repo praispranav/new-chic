@@ -193,15 +193,19 @@
     li{
         background: linear-gradient(to right bottom, rgb(235, 235, 235), rgb(200,200,200), rgb(255,255,255));
         padding:8px;
-        padding-right:15px;
-        padding-left:15px;
+        padding-right:.5em;
+        padding-left:.5em;
         color:black;
         border-radius: 50%;
+        min-width: 40px;
+        max-width: 50px;
         box-shadow: 2px 2px 4px rgb(210,210,210);
         &:hover{
-            color:white;
+            // color: ;
             background-color: red;
-            transition: 2s;
+            transform: scale(1.1);
+            transition: 0.5s;
+            box-shadow: 3px 3px 7px rgb(210,210,210);
 
         }
     }

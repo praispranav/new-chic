@@ -1,5 +1,5 @@
-import React,{useContext} from 'react';
-import {motion} from "framer-motion"
+import React from 'react';
+import { motion } from "framer-motion"
 
 const BlogFullWidthArray = (props) => {
     return (
@@ -14,8 +14,10 @@ const BlogFullWidthArray = (props) => {
             }}
             keys={props.keys} 
              className="array">
+
             {props.name}<br/><br />
             {props.english}
+            
         </motion.div>
         </>
     );
