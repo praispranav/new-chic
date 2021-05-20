@@ -1,7 +1,8 @@
 import React,{ useState } from "react"
 
 import { useSelector , useDispatch } from "react-redux"
-import { activeNav } from "../../../actionCreator"
+// import { selectAcuPoint } from "../../"
+import { activeNav, selectAcuPoint } from "../../../actionCreator"
 
 import Typography from "@material-ui/core/Typography"
 import { motion } from "framer-motion"
@@ -43,8 +44,9 @@ const CustomNav = (props) =>{
 
 const Nav = (props) =>{
     
-    const Gstate = useSelector(s=> s.data.nav)
+    const Thisstate = useSelector(selectAcuPoint) 
     const dispatch = useDispatch()
+    const navigation = Thisstate.nav
 
     return(
         <div style={{
@@ -63,42 +65,42 @@ const Nav = (props) =>{
 
                     <CustomNav 
                         name="Profile" 
-                        activenav={Gstate} 
+                        activenav={navigation} 
                         handleClick={
                             (event)=> dispatch(activeNav(event))
                         } />
 
                     <CustomNav 
                         name="Topic and Comments" 
-                        activenav={Gstate} 
+                        activenav={navigation} 
                         handleClick={
                             (event)=> dispatch(activeNav(event))
                         } />
 
                     <CustomNav 
                         name="Function" 
-                        activenav={Gstate} 
+                        activenav={navigation} 
                         handleClick={ 
                             (event)=> dispatch(activeNav(event))
                             } />
 
                     <CustomNav 
                         name="Indication" 
-                        activenav={Gstate} 
+                        activenav={navigation} 
                         handleClick={
                             (event)=> dispatch(activeNav(event))
                             } />
 
                     <CustomNav 
                         name="Reference" 
-                        activenav={Gstate} 
+                        activenav={navigation} 
                         handleClick={
                             (event)=> dispatch(activeNav(event))
                             } />
 
                     <CustomNav 
                         name="Notes" 
-                        activenav={Gstate} 
+                        activenav={navigation} 
                         handleClick={
                             (event)=> dispatch(activeNav(event))
                             } />

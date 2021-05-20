@@ -9,8 +9,8 @@ import Typography from "@material-ui/core/Typography";
 import {motion } from "framer-motion"
 
 import NavigateNext from '@material-ui/icons/NavigateNext';
-import { useSelector, useDispatch } from 'react-redux';
-
+import { useSelector } from 'react-redux';
+import { selectData, selectAcuPoint } from "../../actionCreator"
 import Items from "./AcupointFiles/Items"
 
 
@@ -72,17 +72,13 @@ const Control = (props) =>{
 
 function BlogDetailContent(props) {
 
-    const Gstate = useSelector(s=> s.data)
-    const activeNav = Gstate.nav
+    const Thisstate = useSelector(selectAcuPoint)
+    const Gstate = useSelector(selectData)
+    const activeNav = Thisstate.nav
 
-    const Content = Gstate.data.filter(
-        
-        (item)=> item.name
-            .includes(Gstate.acupagelink.slice(0,5)))
-            .map((item)=> 
-                <Items newItem={item} />
-    
-        )
+    const Content = Thisstate.acupointlinkload ? Gstate.list
+            .filter((item)=> item.name.includes(Thisstate.acupagelink.slice(0,5)))
+            .map((items)=> <Items newItem={items} />) : "Loading......."
 
     return (
         <>
@@ -90,7 +86,7 @@ function BlogDetailContent(props) {
             <div className="card-content pl-0 pr-0 pb-0">
                 
                 <div >        
-                    {Content}
+                    { Content }
                 </div>
 
                 <br /><br />

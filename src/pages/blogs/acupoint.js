@@ -8,20 +8,29 @@ import Footer from "../../components/common/footer/Footer";
 import ScrollTopBtn from "../../components/common/ScrollTopBtn";
 import bg from "../../assets/images/custom/bg.jpg"
 import { useDispatch, useSelector } from "react-redux"
-import  { getReq, postReq }  from "../../dataFetch"
+import  { getReq }  from "../../dataFetch"
 import { apiUrl } from "../../config/config"
-import { addData, error, addPageLink } from "../../actionCreator"
+
+import { 
+    acuPageLink, 
+    activeNav, 
+    data, 
+    error ,
+    selectData,
+    selectAcuPoint
+} from "../../actionCreator"
 
 const apiEndpoint = apiUrl.url + "/acupunctures" ;
 
 function BlogDetail(props) {
     
-    const Gstate = useSelector(s=> s.data)
+    const Gstate = useSelector(selectData)
+    const Thisstate = useSelector(selectAcuPoint)
     const dispatch = useDispatch()
 
     const dataload = (event) =>{
-        dispatch(addData(event))
-        dispatch(addPageLink(props.name))
+        dispatch(data(event))
+        dispatch(acuPageLink(props.name.match.params.name))
     }
 
     useEffect(()=>{
@@ -36,12 +45,12 @@ function BlogDetail(props) {
     return (
         <div>
             <GeneralHeader />
-
+        {console.log(Gstate.list)}
             <Breadcrumb 
                 CurrentPgTitle="Acupuncture Point" 
                 MenuPgTitle="Acupuncture" 
                 img={bg} 
-            />
+            /> {console.log("Gstate",Gstate, "Thisstate", "Thisstate")}
                 
             <div className="container">
                 <Typography variant="h6">
@@ -91,15 +100,15 @@ function BlogDetail(props) {
             </section>
 
 
-            {/* <div className="container">
+            <div className="container">
                 <NewsLetter />
-            </div> */}
-
+            </div>
+ 
             <Footer />
 
-            <ScrollTopBtn />
+            <ScrollTopBtn /> 
 
-        </div>
+         </div> 
     );
 }
 

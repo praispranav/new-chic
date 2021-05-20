@@ -3,11 +3,19 @@ export {
     activeFilter,
     data,
     loading,
-    selectData,
     acupuntureData,
     error,
+    selectData,
 
 } from "./redux/acuSlice"
+
+export {
+
+    activeNav,
+    acuPageLink,
+    selectAcuPoint,
+
+} from "./redux/acupointSlice"
 
 // acupuntureData,
 // activeNav, 

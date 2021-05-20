@@ -109,6 +109,10 @@ function BlogFullWidth() {
                      </div>
                  </div>
              </section>
+            
+            <div className="container" style={{margin:"1em 2em", wordWrap:"wrap", width:"80vw"}}>
+                <Typography variant="h6">{acuDatA.pagination}</Typography>
+            </div>
 
              <div className="mymobile">
                  <Pagination />

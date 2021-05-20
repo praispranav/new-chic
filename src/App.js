@@ -44,7 +44,7 @@ import Acupuncture from "./pages/blogs/Acupunture";
 // import BlogGrid from "./pages/blogs/BlogGrid";
 // import BlogLeftSidebar from "./pages/blogs/BlogLeftSidebar";
 // import BlogRightSidebar from "./pages/blogs/BlogRightSidebar";
-// import Acupoint from "./pages/blogs/Acupoint";
+import Acupoint from "./pages/blogs/Acupoint";
 // import Login from "./pages/Login";
 // import SignUp from "./pages/SignUp";
 // import Error from "./pages/Error";
@@ -96,10 +96,10 @@ const App = () => {
               <AppRoute path="/contact" component={Contact} />
               <AppRoute path="/recover" component={RecoverPassword} /> */}
 
-              {/* <AppRoute path="/acupoint/:name" component={(event)=> 
+              <AppRoute path="/acupuncture/:name" component={(event)=> 
                 <div>
                   <Acupoint name={event}/>
-                  </div>} /> */}
+                  </div>} />
               <AppRoute path="/acupuncture" component={Acupuncture} />
 			  
               {/* <AppRoute path="/blog-grid" component={BlogGrid} />

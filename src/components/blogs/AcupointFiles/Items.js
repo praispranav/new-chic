@@ -2,7 +2,7 @@ import React from "react"
 import Nav from "./Nav"
 
 import { useDispatch , useSelector } from "react-redux"
-import { activeNav } from "../../../actionCreator"
+import { activeNav, selectAcuPoint, selectData } from "../../../actionCreator"
 
 import Typography from "@material-ui/core/Typography"
 import CheckIcon from "@material-ui/icons/Check"
@@ -68,12 +68,15 @@ const List = (props) =>{
 
 const Items = (incomingData) =>{
     const props = incomingData.newItem
-    const state = useSelector(s=> s.data)
-    const Gstate = state.acupagelink
-    const activeNav = state.nav
+    
+    const Thisstate = useSelector(selectAcuPoint)
+    // const  Gstate= useSelector(selectData)
+    const page = Thisstate.acupagelink
+
+    const activeNav = Thisstate.nav
     return(
         <div>
-            <ul>{console.log("hello", Gstate)}
+            <ul>
             <div className="">
                     <Typography variant="h4">{props.name}</Typography>
                     <div className="headerborder"></div>
@@ -82,7 +85,7 @@ const Items = (incomingData) =>{
                 <br />
                 <br />
 
-                <BreadCrumb name={Gstate} />
+                <BreadCrumb name={page} />
 
                 <Typography 
                     variant="h4" 
@@ -94,7 +97,7 @@ const Items = (incomingData) =>{
                 
                 <div className="qrcode"> 
                     <QRCode 
-                        value={`/acupunture/${Gstate}`} 
+                        value={`/acupunture/${page}`} 
                         size="110" 
                     />
                 </div>
