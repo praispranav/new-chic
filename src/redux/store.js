@@ -1,5 +1,8 @@
-import { createStore } from "redux"
-import reducers from "./combineReducer"
+import { configureStore } from '@reduxjs/toolkit';
+import dataReducer from './acuSlice';
 
-const store = createStore(reducers)
-export default store
+export const store = configureStore({
+  reducer: {
+    data: dataReducer,
+  },
+});

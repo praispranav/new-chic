@@ -2,13 +2,13 @@ import React from 'react';
 import BlogFullWidthArray from "./BlogFullWidthArray"
 import { Link } from "react-router-dom"
 import { useSelector , useDispatch } from "react-redux"
+import { selectData } from "../../actionCreator"
 
 function BlogFullWidthItems(props){
 
-    const Gstate = useSelector(s=> s.data)
-    const dispatch = useDispatch()
+    const Gstate = useSelector(selectData)
     const Filter = Gstate.filter
-    const state = Gstate.data
+    const state = Gstate.list
 
     const Array = state != null ?  state.map((item)=> 
 

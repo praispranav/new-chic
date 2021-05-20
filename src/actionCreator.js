@@ -1,10 +1,16 @@
 export { 
 
-    addData, 
-    error, 
     activeFilter,
+    data,
+    loading,
+    selectData,
     acupuntureData,
-    activeNav, 
-    addPageLink
+    error,
 
-} from "./redux/data/AcupunctureAction"
+} from "./redux/acuSlice"
+
+// acupuntureData,
+// activeNav, 
+// addPageLink
+// addData, 
+// error, 

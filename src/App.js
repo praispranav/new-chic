@@ -44,11 +44,13 @@ import Acupuncture from "./pages/blogs/Acupunture";
 // import BlogGrid from "./pages/blogs/BlogGrid";
 // import BlogLeftSidebar from "./pages/blogs/BlogLeftSidebar";
 // import BlogRightSidebar from "./pages/blogs/BlogRightSidebar";
-import Acupoint from "./pages/blogs/Acupoint";
+// import Acupoint from "./pages/blogs/Acupoint";
 // import Login from "./pages/Login";
 // import SignUp from "./pages/SignUp";
 // import Error from "./pages/Error";
 import "./assets/css/customcss.css"
+import { Provider } from 'react-redux';
+import { store } from "./redux/store"
 
 const App = () => {
 
@@ -61,6 +63,7 @@ const App = () => {
   }, [location]);
   return (
     <>
+    <Provider store={store}>
       <ScrollReveal
         ref={childRef}
         children={() => (
@@ -93,10 +96,10 @@ const App = () => {
               <AppRoute path="/contact" component={Contact} />
               <AppRoute path="/recover" component={RecoverPassword} /> */}
 
-              <AppRoute path="/acupoint/:name" component={(event)=> 
+              {/* <AppRoute path="/acupoint/:name" component={(event)=> 
                 <div>
                   <Acupoint name={event}/>
-                  </div>} />
+                  </div>} /> */}
               <AppRoute path="/acupuncture" component={Acupuncture} />
 			  
               {/* <AppRoute path="/blog-grid" component={BlogGrid} />
@@ -110,6 +113,7 @@ const App = () => {
               <AppRoute component={Error} />
           </Switch>
         )} />
+      </Provider>
     </>
   );
 }
